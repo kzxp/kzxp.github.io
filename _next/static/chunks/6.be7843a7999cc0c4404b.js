@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{Nnn2:function(n,a,e){"use strict";e.r(a);a.default=[{name:"insured",icon:"user"},{name:"basic plan",icon:"file-alt"},{name:"rider",icon:"plus-square"},{name:"summary",icon:"list-alt"}]}}]);
