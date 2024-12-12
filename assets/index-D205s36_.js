@@ -278,7 +278,7 @@ Including main features KYC, deposit money and transfer money from THB to other 
 `,ue.jsx(t.li,{children:"Design and improve frontend development and deployment process (CI/CD)."}),`
 `,ue.jsx(t.li,{children:"Migrate exisiting frontend infrastructure to GCP for better maintainability and cost efficiency."}),`
 `]}),`
-`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, Elixir, GCP, Terraform, Kubernetes, SQL, ArgoCD, Github Action, Vitest, Playwright"}),`
+`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, CSS (Tailwind, Mantine), Elixir, GCP, Terraform, Kubernetes, SQL, ArgoCD, Github Action, Vitest, Playwright"}),`
 `,ue.jsx(t.hr,{}),`
 `,ue.jsx(t.h2,{children:"Senior software engineer @ Zipmex - Apr 2020 - Apr 2023"}),`
 `,ue.jsx(t.h3,{children:"Cryptocurrency Exchange"}),`
@@ -292,14 +292,14 @@ Including main features KYC, deposit money and transfer money from THB to other 
 `,ue.jsx(t.li,{children:"Analyze and clarify on the production issues with the Customer Support team."}),`
 `,ue.jsx(t.li,{children:"Being one of the early member in the tech team to achieve multiple goals of the fast paced startup."}),`
 `]}),`
-`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, Elixir, AWS, Terraform, Kubernetes, SQL, ArgoCD, Github Action, Jest, Playwright"})]})}function rue(e={}){const{wrapper:t}=e.components||{};return t?ue.jsx(t,{...e,children:ue.jsx(LD,{...e})}):LD(e)}function ND(e){const t={h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",ul:"ul",...e.components};return ue.jsxs(ue.Fragment,{children:[ue.jsx(t.h2,{children:"Frontend developer @ Go.Exchange (Omise) - May 2019 - Apr 2020"}),`
+`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, CSS (Styled Components, MUI), Elixir, AWS, Terraform, Kubernetes, SQL, ArgoCD, Github Action, Jest, Playwright"})]})}function rue(e={}){const{wrapper:t}=e.components||{};return t?ue.jsx(t,{...e,children:ue.jsx(LD,{...e})}):LD(e)}function ND(e){const t={h2:"h2",h3:"h3",hr:"hr",li:"li",p:"p",ul:"ul",...e.components};return ue.jsxs(ue.Fragment,{children:[ue.jsx(t.h2,{children:"Frontend developer @ Go.Exchange (Omise) - May 2019 - Apr 2020"}),`
 `,ue.jsx(t.h3,{children:"Cryptocurrency Exchange"}),`
 `,ue.jsxs(t.ul,{children:[`
 `,ue.jsx(t.li,{children:"Responsible for implementing cryptocurrency trading web based application by using React."}),`
 `,ue.jsx(t.li,{children:"Ensuring quality with unit testing and code reviewing."}),`
 `,ue.jsx(t.li,{children:"Constantly improving user interface and performance for the best experience."}),`
 `]}),`
-`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, BuildKite, Jest"}),`
+`,ue.jsx(t.p,{children:"React.js, Node.js, CSS (CSS Module), TypeScript, BuildKite, Jest"}),`
 `,ue.jsx(t.hr,{}),`
 `,ue.jsx(t.h2,{children:"Frontend developer @ AppMan - Apr 2017 - Apr 2019"}),`
 `,ue.jsx(t.h3,{children:"Insurance Software"}),`
@@ -311,7 +311,7 @@ Including main features KYC, deposit money and transfer money from THB to other 
 `,ue.jsx(t.li,{children:"Ensuring quality with unit testing and automate e2e testing (Cypress)."}),`
 `,ue.jsx(t.li,{children:"Experienced of leading a small frontend team to deliver work on time."}),`
 `]}),`
-`,ue.jsx(t.p,{children:"React.js, Node.js, TypeScript, Cordova, SQLite, Github Action, Jest"}),`
+`,ue.jsx(t.p,{children:"React.js, Node.js, CSS (Styled Components), TypeScript, Cordova, SQLite, Github Action, Jest"}),`
 `,ue.jsx(t.hr,{}),`
 `,ue.jsx(t.h2,{children:"System developer @ WebOn Thailand - Mar 2016 - Apr 2017"}),`
 `,ue.jsx(t.h3,{children:"E-commerce"}),`
