@@ -1,0 +1,59 @@
+{
+  "_index-68zj8UVs.js": {
+    "file": "assets/index-68zj8UVs.js",
+    "name": "index",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/epics/CV/pdf.jsx"
+    ]
+  },
+  "index.html": {
+    "file": "assets/app-B_2LC7qT.js",
+    "name": "app",
+    "src": "index.html",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "_index-68zj8UVs.js",
+      "src/epics/stuffs/index.tsx"
+    ],
+    "css": [
+      "assets/app-CN_bSx62.css"
+    ]
+  },
+  "node_modules/@mdx-js/mdx/index.js": {
+    "file": "assets/index-BErS6vCm.js",
+    "name": "index",
+    "src": "node_modules/@mdx-js/mdx/index.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/epics/CV/pdf.jsx": {
+    "file": "assets/pdf-DXjLCKmH.js",
+    "name": "pdf",
+    "src": "src/epics/CV/pdf.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_index-68zj8UVs.js"
+    ]
+  },
+  "src/epics/stuffs/index.tsx": {
+    "file": "assets/index-BTI8LpbE.js",
+    "name": "index",
+    "src": "src/epics/stuffs/index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "index.html",
+      "node_modules/@mdx-js/mdx/index.js"
+    ]
+  }
+}
