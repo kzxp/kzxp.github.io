@@ -1,6 +1,6 @@
 {
-  "_server.browser-B2FwQ9xT.js": {
-    "file": "assets/server.browser-B2FwQ9xT.js",
+  "_server.browser-C7pjFr_i.js": {
+    "file": "assets/server.browser-C7pjFr_i.js",
     "name": "server.browser",
     "isDynamicEntry": true,
     "imports": [
@@ -8,7 +8,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-MFFTQzj_.js",
+    "file": "assets/app-6KTj_4me.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
@@ -17,11 +17,11 @@
       "src/epics/stuffs/index.tsx"
     ],
     "css": [
-      "assets/app-DxV1esGn.css"
+      "assets/app-mTITBDJJ.css"
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-KnTJOJKi.js",
+    "file": "assets/index-BK0R_Qzr.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -30,7 +30,7 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-Cb081gPZ.js",
+    "file": "assets/pdf-B0gnNbMp.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
@@ -39,7 +39,7 @@
     ]
   },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-CumvubC7.js",
+    "file": "assets/index-ChbrLYZs.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
@@ -48,7 +48,7 @@
     ],
     "dynamicImports": [
       "node_modules/@mdx-js/mdx/index.js",
-      "_server.browser-B2FwQ9xT.js"
+      "_server.browser-C7pjFr_i.js"
     ]
   }
 }
