@@ -1,31 +1,27 @@
 {
-  "_index-CbENDhrZ.js": {
-    "file": "assets/index-CbENDhrZ.js",
-    "name": "index",
+  "_server.browser-B2FwQ9xT.js": {
+    "file": "assets/server.browser-B2FwQ9xT.js",
+    "name": "server.browser",
     "isDynamicEntry": true,
     "imports": [
       "index.html"
-    ],
-    "dynamicImports": [
-      "src/epics/CV/pdf.jsx"
     ]
   },
   "index.html": {
-    "file": "assets/app-DCVXBpC1.js",
+    "file": "assets/app-MFFTQzj_.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
-    "isDynamicEntry": true,
     "dynamicImports": [
-      "_index-CbENDhrZ.js",
+      "src/epics/CV/pdf.jsx",
       "src/epics/stuffs/index.tsx"
     ],
     "css": [
-      "assets/app-CN_bSx62.css"
+      "assets/app-DxV1esGn.css"
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-DGxUwAri.js",
+    "file": "assets/index-KnTJOJKi.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -34,17 +30,16 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-B-avDzoa.js",
+    "file": "assets/pdf-Cb081gPZ.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "index.html",
-      "_index-CbENDhrZ.js"
+      "index.html"
     ]
   },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-t9Gp1wCM.js",
+    "file": "assets/index-CumvubC7.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
@@ -52,8 +47,8 @@
       "index.html"
     ],
     "dynamicImports": [
-      "index.html",
-      "node_modules/@mdx-js/mdx/index.js"
+      "node_modules/@mdx-js/mdx/index.js",
+      "_server.browser-B2FwQ9xT.js"
     ]
   }
 }
