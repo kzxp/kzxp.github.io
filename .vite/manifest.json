@@ -1,6 +1,6 @@
 {
-  "_index-68zj8UVs.js": {
-    "file": "assets/index-68zj8UVs.js",
+  "_index-CbENDhrZ.js": {
+    "file": "assets/index-CbENDhrZ.js",
     "name": "index",
     "isDynamicEntry": true,
     "imports": [
@@ -11,13 +11,13 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-B_2LC7qT.js",
+    "file": "assets/app-DCVXBpC1.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
     "isDynamicEntry": true,
     "dynamicImports": [
-      "_index-68zj8UVs.js",
+      "_index-CbENDhrZ.js",
       "src/epics/stuffs/index.tsx"
     ],
     "css": [
@@ -25,7 +25,7 @@
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-BErS6vCm.js",
+    "file": "assets/index-DGxUwAri.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -34,17 +34,17 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-DXjLCKmH.js",
+    "file": "assets/pdf-B-avDzoa.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_index-68zj8UVs.js"
+      "_index-CbENDhrZ.js"
     ]
   },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-BTI8LpbE.js",
+    "file": "assets/index-t9Gp1wCM.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
