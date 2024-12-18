@@ -1,6 +1,6 @@
 {
-  "_content-6u7z1OQS.js": {
-    "file": "assets/content-6u7z1OQS.js",
+  "_content-CQb2GgjV.js": {
+    "file": "assets/content-CQb2GgjV.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -9,8 +9,8 @@
       "node_modules/@mdx-js/mdx/index.js"
     ]
   },
-  "_server.browser-Cjm1N4Kv.js": {
-    "file": "assets/server.browser-Cjm1N4Kv.js",
+  "_server.browser-DPpZefWF.js": {
+    "file": "assets/server.browser-DPpZefWF.js",
     "name": "server.browser",
     "isDynamicEntry": true,
     "imports": [
@@ -18,7 +18,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-DtMJLPbw.js",
+    "file": "assets/app-Dkx5B0vx.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
@@ -28,11 +28,11 @@
       "src/epics/stuffs/[stuff].tsx"
     ],
     "css": [
-      "assets/app-ELUqEenR.css"
+      "assets/app-DHaJ2QOZ.css"
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-DTC05tPg.js",
+    "file": "assets/index-j4G2i7Hw.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-DiCCdFjw.js",
+    "file": "assets/pdf-CCSqEkpc.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
@@ -50,26 +50,26 @@
     ]
   },
   "src/epics/stuffs/[stuff].tsx": {
-    "file": "assets/_stuff_-DUvl2LUL.js",
+    "file": "assets/_stuff_-B_VHr8-x.js",
     "name": "_stuff_",
     "src": "src/epics/stuffs/[stuff].tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_content-6u7z1OQS.js"
+      "_content-CQb2GgjV.js"
     ],
     "dynamicImports": [
-      "_server.browser-Cjm1N4Kv.js"
+      "_server.browser-DPpZefWF.js"
     ]
   },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-ChX9cTX1.js",
+    "file": "assets/index-CmzkWMg9.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_content-6u7z1OQS.js"
+      "_content-CQb2GgjV.js"
     ]
   }
 }
