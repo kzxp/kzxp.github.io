@@ -1,6 +1,16 @@
 {
-  "_server.browser-C7pjFr_i.js": {
-    "file": "assets/server.browser-C7pjFr_i.js",
+  "_content-6u7z1OQS.js": {
+    "file": "assets/content-6u7z1OQS.js",
+    "name": "content",
+    "imports": [
+      "index.html"
+    ],
+    "dynamicImports": [
+      "node_modules/@mdx-js/mdx/index.js"
+    ]
+  },
+  "_server.browser-Cjm1N4Kv.js": {
+    "file": "assets/server.browser-Cjm1N4Kv.js",
     "name": "server.browser",
     "isDynamicEntry": true,
     "imports": [
@@ -8,20 +18,21 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-6KTj_4me.js",
+    "file": "assets/app-DtMJLPbw.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/epics/CV/pdf.jsx",
-      "src/epics/stuffs/index.tsx"
+      "src/epics/stuffs/index.tsx",
+      "src/epics/stuffs/[stuff].tsx"
     ],
     "css": [
-      "assets/app-mTITBDJJ.css"
+      "assets/app-ELUqEenR.css"
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-BK0R_Qzr.js",
+    "file": "assets/index-DTC05tPg.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -30,7 +41,7 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-B0gnNbMp.js",
+    "file": "assets/pdf-DiCCdFjw.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
@@ -38,17 +49,27 @@
       "index.html"
     ]
   },
+  "src/epics/stuffs/[stuff].tsx": {
+    "file": "assets/_stuff_-DUvl2LUL.js",
+    "name": "_stuff_",
+    "src": "src/epics/stuffs/[stuff].tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_content-6u7z1OQS.js"
+    ],
+    "dynamicImports": [
+      "_server.browser-Cjm1N4Kv.js"
+    ]
+  },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-ChbrLYZs.js",
+    "file": "assets/index-ChX9cTX1.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "index.html"
-    ],
-    "dynamicImports": [
-      "node_modules/@mdx-js/mdx/index.js",
-      "_server.browser-C7pjFr_i.js"
+      "index.html",
+      "_content-6u7z1OQS.js"
     ]
   }
 }
