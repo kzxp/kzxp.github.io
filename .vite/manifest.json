@@ -1,6 +1,6 @@
 {
-  "_content-BY54imRD.js": {
-    "file": "assets/content-BY54imRD.js",
+  "_content-3EJ5mYfC.js": {
+    "file": "assets/content-3EJ5mYfC.js",
     "name": "content",
     "imports": [
       "index.html"
@@ -9,8 +9,8 @@
       "node_modules/@mdx-js/mdx/index.js"
     ]
   },
-  "_server.browser-CB2cdyQr.js": {
-    "file": "assets/server.browser-CB2cdyQr.js",
+  "_server.browser-DiwU63TF.js": {
+    "file": "assets/server.browser-DiwU63TF.js",
     "name": "server.browser",
     "isDynamicEntry": true,
     "imports": [
@@ -18,7 +18,7 @@
     ]
   },
   "index.html": {
-    "file": "assets/app-BfW2FRAt.js",
+    "file": "assets/app-ZHYPVwzA.js",
     "name": "app",
     "src": "index.html",
     "isEntry": true,
@@ -28,11 +28,11 @@
       "src/epics/stuffs/[stuff].tsx"
     ],
     "css": [
-      "assets/app-Bpe0KMO4.css"
+      "assets/app-BShZSxBQ.css"
     ]
   },
   "node_modules/@mdx-js/mdx/index.js": {
-    "file": "assets/index-CTiE3xJ0.js",
+    "file": "assets/index-DBLHYdnU.js",
     "name": "index",
     "src": "node_modules/@mdx-js/mdx/index.js",
     "isDynamicEntry": true,
@@ -41,7 +41,7 @@
     ]
   },
   "src/epics/CV/pdf.jsx": {
-    "file": "assets/pdf-zsLnKDPw.js",
+    "file": "assets/pdf-Bsh-TK39.js",
     "name": "pdf",
     "src": "src/epics/CV/pdf.jsx",
     "isDynamicEntry": true,
@@ -50,26 +50,26 @@
     ]
   },
   "src/epics/stuffs/[stuff].tsx": {
-    "file": "assets/_stuff_-BxVhDotM.js",
+    "file": "assets/_stuff_-DDXIlkbJ.js",
     "name": "_stuff_",
     "src": "src/epics/stuffs/[stuff].tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_content-BY54imRD.js"
+      "_content-3EJ5mYfC.js"
     ],
     "dynamicImports": [
-      "_server.browser-CB2cdyQr.js"
+      "_server.browser-DiwU63TF.js"
     ]
   },
   "src/epics/stuffs/index.tsx": {
-    "file": "assets/index-TJoQflcN.js",
+    "file": "assets/index-DOQMvuDt.js",
     "name": "index",
     "src": "src/epics/stuffs/index.tsx",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_content-BY54imRD.js"
+      "_content-3EJ5mYfC.js"
     ]
   }
 }
