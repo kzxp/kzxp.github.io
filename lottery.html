@@ -284,6 +284,57 @@
   }
   .info-box strong { color: var(--gold-light); opacity: 1; }
 
+  /* Score tier buttons */
+  .score-tiers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 600px) { .score-tiers { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 380px) { .score-tiers { grid-template-columns: repeat(2, 1fr); } }
+
+  .tier-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 10px;
+    padding: 0.65rem 0.4rem 0.55rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .tier-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
+    opacity: 0; transition: opacity 0.2s;
+  }
+  .tier-btn:hover::before { opacity: 1; }
+  .tier-btn:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-1px); }
+
+  .tier-btn.active {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+    box-shadow: 0 0 16px rgba(201,168,76,0.15), inset 0 1px 0 rgba(201,168,76,0.2);
+  }
+  .tier-btn.active::after {
+    content: '✓';
+    position: absolute; top: 4px; right: 6px;
+    font-size: 0.6rem; color: var(--gold); font-weight: 700;
+  }
+
+  .tier-icon { font-size: 1.3rem; line-height: 1; }
+  .tier-name { font-size: 0.82rem; font-weight: 700; color: var(--cream); letter-spacing: 0.02em; }
+  .tier-score {
+    font-size: 0.7rem; color: var(--gold); font-weight: 600;
+    background: rgba(201,168,76,0.1);
+    border-radius: 4px; padding: 0.05rem 0.35rem;
+  }
+  .tier-btn.active .tier-score { background: rgba(201,168,76,0.2); }
+  .tier-desc { font-size: 0.62rem; color: var(--cream2); opacity: 0.45; margin-top: 0.05rem; }
+
   .toast {
     position: fixed; bottom: 2rem; left: 50%;
     transform: translateX(-50%) translateY(100px);
@@ -361,6 +412,43 @@
             <option value="10">10 ตัว</option>
           </select>
         </div>
+      </div>
+
+      <div class="control-group" style="grid-column: 1 / -1;">
+        <label>เกณฑ์คะแนนสถิติขั้นต่ำ</label>
+        <div class="score-tiers" id="scoreTiers">
+          <button class="tier-btn active" data-score="0" onclick="selectTier(this)">
+            <span class="tier-icon">🎲</span>
+            <span class="tier-name">ทั้งหมด</span>
+            <span class="tier-score">≥ 0%</span>
+            <span class="tier-desc">ไม่กรอง</span>
+          </button>
+          <button class="tier-btn" data-score="25" onclick="selectTier(this)">
+            <span class="tier-icon">🟡</span>
+            <span class="tier-name">ปกติ</span>
+            <span class="tier-score">≥ 25%</span>
+            <span class="tier-desc">กรองอ่อน</span>
+          </button>
+          <button class="tier-btn" data-score="50" onclick="selectTier(this)">
+            <span class="tier-icon">🟠</span>
+            <span class="tier-name">ดี</span>
+            <span class="tier-score">≥ 50%</span>
+            <span class="tier-desc">คัดกลาง</span>
+          </button>
+          <button class="tier-btn" data-score="75" onclick="selectTier(this)">
+            <span class="tier-icon">🔴</span>
+            <span class="tier-name">เด็ด</span>
+            <span class="tier-score">≥ 75%</span>
+            <span class="tier-desc">คัดเข้ม</span>
+          </button>
+          <button class="tier-btn" data-score="90" onclick="selectTier(this)">
+            <span class="tier-icon">💎</span>
+            <span class="tier-name">สุดยอด</span>
+            <span class="tier-score">≥ 90%</span>
+            <span class="tier-desc">หายากมาก</span>
+          </button>
+        </div>
+        <input type="hidden" id="minScore" value="0">
       </div>
     </div>
 
@@ -511,6 +599,7 @@ function generate() {
   const strategy = document.getElementById('strategy').value;
   const lookback = parseInt(document.getElementById('lookback').value);
   const runnerCount = parseInt(document.getElementById('runnerCount').value);
+  const minScore = parseInt(document.getElementById('minScore').value);
   document.getElementById('dataPointsLabel').textContent = lookback;
 
   const btn = document.getElementById('btnGenerate');
@@ -521,7 +610,16 @@ function generate() {
     const freq3 = generateHistoricalData(lookback);
     const tickets = [];
     window._tickets = tickets;
-    for (let i = 0; i < numSets; i++) tickets.push(generateFullTicket(freq3, strategy, runnerCount));
+    const maxAttempts = 2000;
+    let attempts = 0;
+    while (tickets.length < numSets && attempts < maxAttempts) {
+      attempts++;
+      const t = generateFullTicket(freq3, strategy, runnerCount);
+      if (t.score >= minScore) tickets.push(t);
+    }
+    if (tickets.length < numSets) {
+      showToast(`⚠ ได้เพียง ${tickets.length} ชุดที่ผ่านเกณฑ์ ${minScore}% — ลองลดคะแนนขั้นต่ำ`);
+    }
 
     const list = document.getElementById('ticketsList');
     list.innerHTML = '';
@@ -581,6 +679,12 @@ function generate() {
     btn.textContent = '✦ สุ่มเลขเด็ดครบชุด ✦';
     document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, 500);
+}
+
+function selectTier(btn) {
+  document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('minScore').value = btn.dataset.score;
 }
 
 function copyTicketById(i) {
