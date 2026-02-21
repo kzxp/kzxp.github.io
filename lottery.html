@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>หวยฉลาด — สุ่มด้วยสถิติ</title>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
   :root {
     --gold: #c9a84c;
@@ -217,48 +216,29 @@
   .ticket-divider { grid-column: 1 / -1; height: 1px; background: rgba(201,168,76,0.08); margin: 0.1rem 0; }
   .copy-hint { grid-column: 1 / -1; font-size: 0.63rem; color: var(--gold); opacity: 0.3; text-align: right; padding-top: 0.15rem; }
 
-  /* Export buttons */
-  .ticket-actions {
-    display: flex; gap: 0.5rem; padding: 0.6rem 1.2rem;
+  /* Copy bar */
+  .ticket-copy-bar {
+    padding: 0.55rem 1.2rem;
     border-top: 1px solid rgba(201,168,76,0.1);
-    background: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.12);
+    display: flex;
     justify-content: flex-end;
   }
-
-  .btn-export {
-    display: flex; align-items: center; gap: 0.35rem;
+  .btn-copy {
+    display: inline-flex; align-items: center; gap: 0.35rem;
     background: rgba(201,168,76,0.1);
     border: 1px solid rgba(201,168,76,0.25);
     border-radius: 6px;
     color: var(--gold-light);
     font-family: 'Sarabun', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem; font-weight: 600;
+    padding: 0.35rem 0.9rem;
     cursor: pointer;
     transition: all 0.2s;
     letter-spacing: 0.03em;
   }
-  .btn-export:hover { background: rgba(201,168,76,0.2); border-color: rgba(201,168,76,0.5); transform: translateY(-1px); }
-  .btn-export:active { transform: translateY(0); }
-  .btn-export.loading { opacity: 0.6; pointer-events: none; }
-
-  .btn-export-all {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 8px;
-    color: var(--gold);
-    font-family: 'Sarabun', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.4rem 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.03em;
-  }
-  .btn-export-all:hover { background: rgba(201,168,76,0.15); border-color: rgba(201,168,76,0.4); }
-  .btn-export-all.loading { opacity: 0.5; pointer-events: none; }
+  .btn-copy:hover { background: rgba(201,168,76,0.2); border-color: rgba(201,168,76,0.5); transform: translateY(-1px); }
+  .btn-copy:active { transform: translateY(0); }
 
   /* Insight */
   .insight-section {
@@ -461,12 +441,7 @@
   <div id="resultsSection" style="display:none">
     <div class="results-header">
       <div class="results-title">เลขเด็ดของคุณ</div>
-      <div style="display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
-        <div class="results-count" id="resultsCount"></div>
-        <button class="btn-export-all" id="btnExportAll" onclick="exportAll()">
-          ⬇ Export ทั้งหมด
-        </button>
-      </div>
+      <div class="results-count" id="resultsCount"></div>
     </div>
     <div class="tickets-list" id="ticketsList"></div>
 
@@ -627,6 +602,8 @@ function generate() {
       const card = document.createElement('div');
       card.className = 'ticket';
       card.dataset.idx = i;
+      card.style.cursor = 'pointer';
+      card.onclick = () => copyTicketById(i);
       card.style.animationDelay = `${i * 0.07}s`;
       card.innerHTML = `
         <div class="ticket-header">
@@ -661,9 +638,8 @@ function generate() {
           <div class="prize-label">⚡ เลขวิ่ง</div>
           <div class="prize-nums">${t.runners.map(r=>`<span class="num-badge num-1">${r}</span>`).join('')}</div>
         </div>
-        <div class="ticket-actions">
-          <button class="btn-export" onclick="copyTicketById(${i})">📋 คัดลอก</button>
-          <button class="btn-export" id="exportBtn${i}" onclick="exportTicketImg(${i}, ${i+1})">🖼 บันทึกรูป</button>
+        <div class="ticket-copy-bar">
+          <button class="btn-copy" onclick="event.stopPropagation(); copyTicketById(${i})">📋 คัดลอกทั้งชุด</button>
         </div>
       `;
       list.appendChild(card);
@@ -706,68 +682,7 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2400);
 }
 
-async function exportTicketImg(idx, num) {
-  const btn = document.getElementById(`exportBtn${idx}`);
-  const ticket = document.querySelector(`.ticket[data-idx="${idx}"]`);
-  if (!ticket) return;
 
-  btn.classList.add('loading');
-  btn.textContent = '⏳ กำลัง export...';
-
-  // Temporarily hide the actions bar for clean capture
-  const actions = ticket.querySelector('.ticket-actions');
-  actions.style.display = 'none';
-
-  try {
-    const canvas = await html2canvas(ticket, {
-      scale: 3,
-      backgroundColor: '#1a1408',
-      useCORS: true,
-      logging: false,
-    });
-
-    // Add a subtle padding frame
-    const padded = document.createElement('canvas');
-    const pad = 24;
-    padded.width = canvas.width + pad*2;
-    padded.height = canvas.height + pad*2;
-    const ctx = padded.getContext('2d');
-    ctx.fillStyle = '#0d0a04';
-    ctx.fillRect(0, 0, padded.width, padded.height);
-    ctx.drawImage(canvas, pad, pad);
-
-    const link = document.createElement('a');
-    link.download = `หวยฉลาด-ชุด${num}.png`;
-    link.href = padded.toDataURL('image/png');
-    link.click();
-
-    showToast(`💾 บันทึกรูปชุดที่ ${num} แล้ว`);
-  } catch(e) {
-    showToast('เกิดข้อผิดพลาด ลองใหม่');
-  } finally {
-    actions.style.display = '';
-    btn.classList.remove('loading');
-    btn.textContent = '🖼 บันทึกรูป';
-  }
-}
-
-async function exportAll() {
-  const allCards = document.querySelectorAll('.ticket');
-  if (!allCards.length) return;
-
-  const btn = document.getElementById('btnExportAll');
-  btn.classList.add('loading');
-  btn.textContent = '⏳ กำลัง export...';
-
-  for (let i = 0; i < allCards.length; i++) {
-    await exportTicketImg(i, i+1);
-    await new Promise(r => setTimeout(r, 200));
-  }
-
-  btn.classList.remove('loading');
-  btn.textContent = '⬇ Export ทั้งหมด';
-  showToast(`✅ Export ทั้งหมด ${allCards.length} ชุด เสร็จแล้ว`);
-}
 
 window.addEventListener('load', generate);
 </script>
